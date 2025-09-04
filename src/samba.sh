@@ -108,6 +108,10 @@ if [ -d "/data3" ]; then
   addShare "/data3" "Data3" "Shared" || error "Failed to add shared folder '/data3'. Please check its permissions."
 fi
 
+if [ -d "/netshare" ]; then
+  addShare "/home/samba/netShare" "netShare" "netShare"
+fi
+
 IFS=',' read -r -a dirs <<< "${SHARES:-}"
 for dir in "${dirs[@]}"; do
   [ ! -d "$dir" ] && continue
