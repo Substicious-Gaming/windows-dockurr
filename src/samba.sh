@@ -61,6 +61,10 @@ addShare() {
           echo "    guest only = yes"
           echo "    force user = root"
           echo "    force group = root"
+          echo "    force directory mask = 0775"
+          echo "    browsable = yes"
+          echo "    public = yes"
+          echo "    directory mask = 0755"
   } >> "/etc/samba/smb.conf"
 
   return 0
